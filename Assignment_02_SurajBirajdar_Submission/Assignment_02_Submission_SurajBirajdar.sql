@@ -95,14 +95,7 @@ group by c.customer_id, st.store_id, name
 having count(distinct st.store_id);
 
 
-SELECT c.customer_id, c.first_name, c.last_name, s.store_id
-FROM customer c
-JOIN rental r ON c.customer_id = r.customer_id
-JOIN inventory i ON r.inventory_id = i.inventory_id
-JOIN store s ON i.store_id = s.store_id
-WHERE s.store_id IN (1, 2)
-GROUP BY c.customer_id, c.first_name, c.last_name, s.store_id
-HAVING COUNT(DISTINCT s.store_id);
+
 
 
 
